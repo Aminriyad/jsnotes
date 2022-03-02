@@ -110,3 +110,43 @@ function save(){
 }
 //this code was made to make the last saves and the number that they stoped on
 //and they were made as 3 one to make all of the numbers they stopped on 
+let saveEl = document.getElementById("save-el")
+let countEl = document.getElementById("count-el")
+let count = 0
+console.log(saveEl)
+function increment(){
+    courn += 1
+    countEl.textContent = count  // also fine to but textContent here
+}
+function save(){
+    let countStr = count + " - "
+    save.textContent += countStr //is how we changed it from the normal to text content to prvide the text
+    console.log(count)
+}
+//the problem that we are facing is that they're is no space in the after 
+//.textcontect provide the text of the element  
+//mozilla is n;t human readable, try to find big words
+let saveEl = document.getElementById("save-el")
+let countEl = document.getElementById("count-el")
+let count = 0
+console.log(saveEl)
+function increment(){
+    count += 1
+    countEl.textContent = count 
+}
+function save(){
+    let countStr = count + " - "
+    save.textContent += countStr
+    console.log(count)
+    countEl.textContent = 0
+    count = 0
+}
+// the code in above is to make the main counter back to zer and to make it reload
+//without having to load any other thing to count by adding 
+//adding countEL.textContent = 0
+//adding count = 0
+//this project is done
+function amin(){
+    let amin = getElementById("nigga")
+    conole.log("ahm")
+}
