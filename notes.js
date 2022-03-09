@@ -1,4 +1,4 @@
-  var myarray =[18,64, 99]
+var myarray =[18,64, 99]
 myarray[1] = 45;
 var myarray = [18,64,99]
 myarray[0] = 45;

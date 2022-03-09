@@ -1,0 +1,27 @@
+*{
+    border: 0px;
+    margin: 0px;
+}
+h1{
+    color: yellow;
+    font-family: georgia;
+}
+body{
+    color: goldenrod;
+    background-image: url(https://doublejj.com/wp-content/uploads/2018/02/green-background-images-23.jpg);
+    background-size: cover;
+    text-align: center;
+    color: white;
+    font-size: 3rem ;
+    font-weight: bold;
+}
+button{
+    background-color: goldenrod;
+    color: green;
+    font-size: 2rem;
+    font-family: georgia;
+    border-radius:6px;
+    width: 300px;
+    height: 60px;
+    font-weight: bold;
+    margin-top: 4px;}
