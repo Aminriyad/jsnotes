@@ -13,10 +13,13 @@ function startgame(){
 }
 function rendergame() {
     cardsEL.innerHTML ="cards: " + firstCard +" "+ lastCard// link it to a var and make in change by fuction and then .innerhtml
-    document.getElementById("sum-el").innerHTML = "sum: 14"
+    sumEL.innerHTML = "sum: 14"
 if (sum <21){
-    massage = ("do you want tom draw a new card?")
-} else if (sum ===21){
+        B = prompt("what is your name ")
+        if (B != null){
+            sumEL.innerHTML = "hello "+ ""+ B + " how are you today?"
+        }
+    }else if (sum ===21){
     massage = (" you won")
 } else if (sum>21){
     massage = (" you are out of the game")
