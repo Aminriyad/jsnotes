@@ -1,5 +1,5 @@
 var firstCard = 2
-var lastCard =1
+var lastCard = 1
 var sum = firstCard + lastCard;
 var alive = true;
 var massage = ("")
@@ -12,13 +12,11 @@ function startgame(){
     rendergame()
 }
 function rendergame() {
-    cardsEL.innerHTML ="cards: " + firstCard +" "+ lastCard// link it to a var and make in change by fuction and then .innerhtml
-    sumEL.innerHTML = "sum: 14"
+    cardsEL.innerHTML ="cards: " + firstCard +" and  "+ lastCard// link it to a var and make in change by fuction and then .innerhtml
+    sumEL.innerHTML = "sum: " + sum
 if (sum <21){
-        B = prompt("what is your name ")
-        if (B != null){
-            sumEL.innerHTML = "hello "+ ""+ B + " how are you today?"
-        }
+    massage = (" you are still in the game")
+    alive = true;
     }else if (sum ===21){
     massage = (" you won")
 } else if (sum>21){
@@ -27,7 +25,9 @@ if (sum <21){
 }
 description.textContent= massage}// using text content specify that we mean only text content
 function newcard(){
-    let card = 64
+    let card = Math.floor(Math.random() * 10)
     sum+= card;
-    startgame();
-}
+    cardsEL.innerHTML = card // link it to a var and make in change by fuction and then .innerhtml
+    sumEL.innerHTML = "sum: " + sum
+    startgame()
+} 
