@@ -1,33 +1,36 @@
-var firstCard = 2
-var lastCard = 1
-var sum = firstCard + lastCard;
-var alive = true;
-var massage = ("")
-let description = document.getElementById("description") /*what ever happen to description happen to the text in html, not html
-bacause we are using it in document.getElementById("") function*/
-sumEL = document.querySelector("#sum-el") // we can use classes .sum-el
-console.log(description)
-cardsEL = document.querySelector("#cards-el")
-function startgame(){
-    rendergame()
+let firstCard = 10
+let secondCard = 4
+// 1. Create a new array - cards that contains firstCard and secon
+cards=[firstCard, secondCard]
+let sum = firstCard + secondCard
+let hasBlackJack = false
+let isAlive = true
+let message = ""
+let messageEl = document.getElementById("description")
+let sumEl = document.getElementById("sum-el")
+let cardsEl = document.getElementById("cards-el")
+function startGame() {
+renderGame ()
 }
-function rendergame() {
-    cardsEL.innerHTML ="cards: " + firstCard +" and  "+ lastCard// link it to a var and make in change by fuction and then .innerhtml
-    sumEL.innerHTML = "sum: " + sum
-if (sum <21){
-    massage = (" you are still in the game")
-    alive = true;
-    }else if (sum ===21){
-    massage = (" you won")
-} else if (sum>21){
-    massage = (" you are out of the game")
-    alive = false; // make sure that the loser is not alive
+function renderGame () {
+    cardsEl. textContent = "Cards: "
+    "Cards: " + cards [0] + " " + cards [1]
+    sumEl. textContent = "Sum: " + sum
+    if (sum <= 20) {
+    message = "Do you want to draw a new card?"
+    } else if (sum === 1) {
+    message = "You've got Blackjack!"
+    hasBlackJack = true
+    } else {
+    message = "You're out of the game!"
+    isAlive = false
+    }
+    messageEl.textContent = message
 }
-description.textContent= massage}// using text content specify that we mean only text content
-function newcard(){
-    let card = Math.floor(Math.random() * 10)
-    sum+= card;
-    cardsEL.innerHTML = card // link it to a var and make in change by fuction and then .innerhtml
-    sumEL.innerHTML = "sum: " + sum
-    startgame()
-} 
+function newcard () {
+    let card = 6
+    sum +=card
+    cards.push(card)
+    console.log(cards)
+    renderGame()
+}
