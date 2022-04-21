@@ -1,16 +1,28 @@
-let firstCard = 10
-let secondCard = 4
-// 1. Create a new array - cards that contains firstCard and secon
-cards=[firstCard, secondCard]
-let sum = firstCard + secondCard
+player ={
+    name: "AMIN",
+    chips: "85"
+}
+cards=[]
+let sum = 0
 let hasBlackJack = false
-let isAlive = true 
+let isAlive = false
 let message = ""
 let messageEl = document.getElementById("description")
 let sumEl = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
-function startGame() {
-renderGame ()
+playerEl = document.querySelector("#player-el")
+
+playerEl.textContent = player.name + ": $" + player.chips
+
+console.log(cards )
+function getRandomCard() {
+    let randomNumer = Math.floor(Math.random()*13 ) + 1
+    if (randomNumer > 10) {
+    return 10
+    } else if (randomNumer===1) {
+    return 11
+    } else {
+    return randomNumer}
 }
 function renderGame () {
     cardsEl. textContent = "Cards: "
@@ -27,10 +39,18 @@ function renderGame () {
     }
     messageEl.textContent = message
 }
-function newcard () {
-    let card = 6
-    sum +=card
-    cards.push(card)
-    console.log(cards)
+function startGame(){
+    isAlive  = true
+    let firstcard = getRandomCard()
+    let secondcard = getRandomCard()
+    card =[firstcard , secondcard]
+    sum = firstcard +  secondcard 
     renderGame()
+}
+function newCard(){
+    if(isAlive===true && hasblacKjacK === false){
+    let card = getRandomCard()
+    sum += card
+    cards.push(card)
+    renderGame()} 
 }

@@ -1,18 +1,54 @@
-sumEL = document.querySelector("#sum-el") 
-cardsEL = document.querySelector("#cards-el")
-massage = document.querySelector("#description")
-card1 =Math.floor(Math.random() * 15)
-card2 = Math.floor(Math.random() * 15)
-card = card1 + card2
-function rendergame(){
-    cardsEL.innerHTML= "cards: " + card1 + " and " + card2
-    sumEL.innerHTML= "sum: " + card
-    if(card<21){
-        massage.innerHTML="you are still in you lucky game."
-    }else if(card===21){
-        massage.innerHTML="YOU won BRO"
-    }else if(card>21){
-        massage.innerHTML="your out bro"
-    }
 
+let A = Math.floor(Math.random() * 15)
+let B =Math.floor(Math.random() * 15)
+let firstCard = 10
+let secondCard = 4
+// 1. Create a new array - cards that contains firstCard and secon
+cards=[firstCard, secondCard]
+let sum = firstCard + secondCard
+let hasBlackJack = false
+let isAlive = true 
+let message = ""
+let messageEl = document.getElementById("description")
+let sumEl = document.getElementById("sum-el")
+let cardsEl = document.getElementById("cards-el")
+function startGame() {
+renderGame ()
+}
+function renderGame () {
+    cardsEl. textContent = "Cards: "
+    "Cards: " + cards [0] + " " + cards [1]
+    sumEl. textContent = "Sum: " + sum
+    if (sum <= 20) {
+    message = "Do you want to draw a new card?"
+    } else if (sum === 1) {
+    message = "You've got Blackjack!"
+    hasBlackJack = true
+    } else {
+    message = "You're out of the game!"
+    isAlive = false
+    }
+    messageEl.textContent = message
+}
+function newcard () {
+    let A = Math.floor(Math.random() * 15)
+    let B =Math.floor(Math.random() * 15)
+    let C =Math.floor(Math.random() * 15)
+    sumy = A + B + C
+    sumEl.textContent = "sum: " + sumy
+    document.getElementById("cards-el").textContent = "cards: " + A +" - " + B +" - " + C 
+    if (sumy <= 20) {
+        messageEl.textContent = "Do you want to draw a new card?"
+        document.querySelector("#firstline").textContent="with "+ sumy + "points"
+        isAlive= True
+        } else if (sumy === 21) {
+        messageEl.textContent = "You've got Blackjack!"
+        document.querySelector("#firstline").textContent="with "+ sumy + "points"
+
+        hasBlackJack = true
+        } else {
+        messageEl.textContent = "You're out of the game!"
+        document.querySelector("#firstline").textContent="with "+ sumy + " points"
+        isAlive = false
+        }
 }

@@ -1,0 +1,15 @@
+body{
+    font-family: arial;
+
+}
+input{
+    padding:10px 10px 10px 10px;
+    width:100%;
+    box-sizing: border-box;
+    border:2px solid green;
+
+}
+button{
+    background-color:green;
+    padding: 10px 20px 10px 20px;
+}
