@@ -1,0 +1,8 @@
+{
+    "manifest_version": 3,
+    "version": "1.1",
+    "name":"leads tradcker",
+    "action":{
+        "deafault_popup":"index.html"
+    }
+}
